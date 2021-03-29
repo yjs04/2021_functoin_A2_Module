@@ -121,10 +121,12 @@
         <!-- /헤더 -->
         <!-- 비쥬얼 -->
         <div id="visual">
-            <div class="visual_slide"><img src="resource/image/visual1.jpg" alt="visual_slide" title="visual_slide"></div>
+            <div class="visual_slide"><img src="resource/image/visual4.jpg" alt="visual_slide" title="visual_slide"></div>
             <div class="visual_bc"></div>
             <div class="visual_text">
-                <h2>공연 <i class="fas fa-angle-right"></i> 월간 공연 일정</h2>
+                <div class="visual_text_box">
+                    <h2 class="visual_title font-change">한국의 찬란한 문화재</h2>
+                </div>
             </div>
         </div>
         <!-- /비쥬얼 -->
@@ -135,6 +137,11 @@
                     <h2>월간 공연 일정 <span>공연 <i class="fas fa-angle-right"></i> 월간 공연 일정</span></h2>
                 </div>
                 <div class="content_box">
+                    <div id="calendar_header">
+                        <button class="page_footer_btn"><i class="fas fa-angle-left"></i></button>
+                        <h5>2020.03</h5>
+                        <button class="page_footer_btn"><i class="fas fa-angle-right"></i></button>
+                    </div>
                     <table id="calendar">
                         <thead>
                             <tr>
@@ -149,7 +156,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="hide">28</td>
+                                <td class="hide">
+                                    <p class="calendar_title">28</p>
+                                    <div class="calendar_list"></div>
+                                </td>
                                 <td>
                                     <p class="calendar_title">1</p>
                                     <div class="calendar_list"></div>

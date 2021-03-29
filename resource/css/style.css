@@ -107,7 +107,7 @@ nav a{
 }
 
 .dep_1:hover > a::after{width: 100%;left: 0;}
-.dep_1:hover .dep_2{height: 180px;box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);}
+.dep_1:hover .dep_2{height: 180px;border-bottom: 1px solid #ddd;}
 .dep_2{
     position: fixed;
     padding: 0 20%;
@@ -214,7 +214,7 @@ nav a{
         display: block;
     }
 
-    .dep_1:hover .dep_2{height:380px;box-shadow: none;}
+    .dep_1:hover .dep_2{height:380px;border-bottom:none;}
     .dep_2 > li{
         padding: 0.5em 1em;
         border: none;
@@ -345,14 +345,15 @@ nav a{
 .visual_text_box{
     width: 80%;
     position: absolute;
-    top: calc(40% / 2);
+    top: calc(80% / 2);
     left: 10%;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    height: 60%;
+    height: 20%;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
 
-.visual_text_box::before,.visual_text_box::after{
+#visual.main_page .visual_text_box{border:none;border-top: 1px solid #fff;border-bottom: 1px solid #fff;top: calc(40% / 2);height: 60%;}
+#visual.main_page .visual_text_box::before,#visual.main_page .visual_text_box::after{
     content: '';
     position: absolute;
     width: 50px;
@@ -370,12 +371,8 @@ nav a{
     left: 10%;
 }
 
-.visual_title{
-    top: 30%;
-    font-size:3em;
-    animation: Title 9s infinite;
-}
-
+.visual_title{font-size:3em;}
+#visual.main_page .visual_title{animation: Title 9s infinite;top: 30%;}
 .visual_text_box > p{
     bottom:20%;
     font-size: 1.2em;
@@ -459,7 +456,7 @@ nav a{
     align-items: center;
 }
 
-.content_title span{
+.content_title h2 *{
     color: #ddd;
     font-size: 0.7em;
 }
@@ -781,9 +778,14 @@ nav a{
 }
 
 #main_banner{
-    margin: 1em 0;
+    margin: 1em auto;
     width: 100%;
     position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1500px;
+    height: 50px;
+    padding: 0;
 }
 
 #main_banner a{
@@ -810,7 +812,7 @@ nav a{
 /* 푸터 */
 footer{
     width: 100%;
-    background-color: #333;
+    background-color: #888;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -828,7 +830,7 @@ footer > *{
     min-width: 400px;
 }
 
-#footer_nav{border-bottom: 1px solid #888;}
+#footer_nav{border-bottom: 1px solid #ddd;}
 #footer_nav > li{margin: 0 1em;width: 200px;}
 #footer_nav > li > a{
     color: #fff !important;
@@ -846,7 +848,7 @@ footer > *{
 #footer_logo{
     background-image: url("../image/logo2.png");
     width: 200px;
-    height: 50px;
+    height: 35px;
     background-repeat: no-repeat;
     display: inline-block;
 }
@@ -881,6 +883,13 @@ footer > *{
 #cultures_body tr{display: grid; grid-template-columns: 1fr 4fr 3fr 3fr 5fr;}
 #cultures_body th{border-width: 3px;}
 #cultures_body tr > *:first-child{padding-left: 1em;}
+#cultures_footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
 
 .page_footer_btn{
     width: 50px;
@@ -896,9 +905,33 @@ footer > *{
 
 .page_footer_btn:hover{background-color: #D7DEFF;opacity: 1;color: #000;}
 .page_footer_btn.select{background-color: #32547B;color: #fff;}
-#cultures_footer{
-    width: 100%;
+#cultures_footer_page{margin: 0 1em;}
+
+/* sub2 page */
+#calendar{width: 100%;}
+#calendar tr {display: grid;grid-template-columns: repeat(7,1fr);}
+#calendar thead tr *{padding: 1em 0.5em;}
+#calendar tbody tr > *{border-top: 1px solid #ddd;transition: 0.3s;cursor: pointer;}
+#calendar tr > *:first-child .calendar_title,#calendar tr > *:first-child{color: #ff3e3e;}
+#calendar tr > *:last-child .calendar_title,#calendar tr > *:last-child{color: #32547B;}
+#calendar tbody tr:first-child > *:first-child{border-color: #ff3e3e;}
+#calendar tbody tr:first-child > *:last-child{border-color: #32547B;}
+#calendar tbody tr:first-child > *{border-width: 3px;}
+.calendar_list{width: 100%;height: 100px;overflow: auto;}
+.calendar_list::-webkit-scrollbar{display: none;}
+.calendar_title{margin: 0;padding:0.5em;}
+.calendar_item{width: 100%;margin: 0;background-color: #32547B;color: #fff;padding: 0.2em;}
+#calendar td.hide{background-color: #eee;}
+#calendar tbody tr > *:hover{background-color: #f5f5f5;}
+#calendar_header{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#calendar_header > h5{
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 1em;
 }
