@@ -649,6 +649,7 @@ nav a{
 #festival .content_title{
     width: 100%;
     text-align: center;
+    justify-content: center;
 }
 
 #festival .content_box{
@@ -812,7 +813,7 @@ nav a{
 /* 푸터 */
 footer{
     width: 100%;
-    background-color: #888;
+    background-color: #555;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -858,6 +859,7 @@ footer > *{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1em;
 }
 
 #cultures_page_info{display: flex;align-items: center;}
@@ -906,6 +908,7 @@ footer > *{
 .page_footer_btn:hover{background-color: #D7DEFF;opacity: 1;color: #000;}
 .page_footer_btn.select{background-color: #32547B;color: #fff;}
 #cultures_footer_page{margin: 0 1em;}
+#cultures_add{position: absolute;top: 0.3em;right: 0;}
 
 /* sub2 page */
 #calendar{width: 100%;}
@@ -934,4 +937,10 @@ footer > *{
     font-weight: bold;
     font-size: 1.2em;
     margin: 0 1em;
+}
+
+#show_add_btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
