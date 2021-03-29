@@ -17,6 +17,7 @@
         <input type="checkbox" id="main_open" class="main_480" hidden name="main_open">
         <header>
             <a href="#" id="logo"></a>
+
             <!-- 네비게이션 -->
             <nav>
                 <ul>
@@ -97,6 +98,7 @@
                 </ul>
             </nav>
             <!-- /네비게이션 -->
+
             <!-- 유틸리티 -->
             <div id="util_wrap">
                 <div id="util_user">
@@ -104,11 +106,11 @@
                     <a href="#">회원가입</a>
                     <a href="#">문의하기</a>
                 </div>
-                <select id="util_lang" class="font-change" name="util_lange">
-                    <option value="한국어" selected>한국어</option>
-                    <option value="English" >English</option>
-                    <option value="中文(简体)" >中文(简体)</option>
-                    <option value="日本語" >日本語</option>
+                <select id="util_lang" name="util_lange">
+                    <option class="font-change" value="한국어" selected>한국어</option>
+                    <option class="font-change" value="English" >English</option>
+                    <option class="font-change" value="中文(简体)" >中文(简体)</option>
+                    <option class="font-change" value="日本語" >日本語</option>
                 </select>
             </div>
             <!-- /유틸리티 -->
@@ -302,7 +304,6 @@
 
         <!-- 푸터 -->
         <footer>
-            <a href="#" id="footer_logo"></a>
             <ul id="footer_nav">
                 <li><a href="#">이용안내</a></li>
                 <li><a href="#">개인정보 처리방침</a></li>
@@ -310,7 +311,10 @@
                 <li><a href="#">도로명 주소안내</a></li>
                 <li><a href="#">사이트오류 신고</a></li>
             </ul>
-            <p id="copyright">인천시 부평구 무네미로 448번길 77 한국산업인력공단 글로벌숙련기술진흥원<br>COPYRIGHTⓒ 2016 HRDKOREA</p>
+            <div id="bottom_footer">
+                <a href="#" id="footer_logo"></a>
+                <p id="copyright" class="m-0 text-white">인천시 부평구 무네미로 448번길 77 한국산업인력공단 글로벌숙련기술진흥원 | COPYRIGHTⓒ 2016 HRDKOREA</p>
+            </div>
         </footer>
         <!-- /푸터 -->
     </div>
