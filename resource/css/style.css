@@ -565,6 +565,8 @@ nav a{
     text-align: center;
     cursor: pointer;
     border-bottom:3px solid #32547B ;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     transition: color 0.3s;
     margin: 0;
     color: #555;
@@ -575,6 +577,8 @@ nav a{
 #main_notice_body{
     width: 100%;
     border: 3px solid #32547B;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border-top: none;
     position: relative;
     height: calc(100% - 50px);
@@ -645,12 +649,6 @@ nav a{
 }
 
 #festival .card_item *{transition: 0.3s;position: relative;z-index: 3;}
-#festival .content_title>h2::after,#festival .content_title>h2::before{display: none;}
-#festival .content_title{
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-}
 
 #festival .content_box{
     display: flex;
@@ -661,7 +659,8 @@ nav a{
 #festival .card_item{
     overflow: hidden;
     position: relative;
-    height: 340px;
+    height: 320px;
+    margin: 1em 0.5em;
     width: calc(80% / 4);
     min-width: 240px;
 }
@@ -712,45 +711,66 @@ nav a{
     padding: 0.7em 1em;
 }
 
+#festival .card_item:hover{transform: translateY(-5%);}
 #festival .card_item:hover::after{width: 100%;left: 0;}
 #festival .card_item:hover .festival_icon{border-color: #fff;}
 #festival .card_item:hover .festival_icon i{color: #fff;}
 #festival .card_item:hover p{color: #fff;}
 #festival .card_item:hover .festival_btn{color: #fff;}
-.festival_btn:hover{opacity: 1;background-color: #fff!important; color: #000 !important;}
+.festival_btn:hover{opacity: 1 !important;}
 
 /* 유네스코 */
 #unesco{width: 90%;min-width: 400px; margin: 0 auto;}
+#unesco .content_box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .unesco_wrap{
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    padding: 1em 0;
+}
+
+.unesco_title::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 100%;
+    bottom: -7px;
+    left: 0;
+    transition: 0.3s;
 }
 
 .unesco_wrap *{margin: 0;transition: 0.3s; color: #888;}
-.unesco_wrap > *{padding: 1em 0.5em;}
+.unesco_wrap > *{padding: 0.5em;}
 .unesco_title{
+    position: relative;
     transition: 0.3s;
     font-weight: bold;
-    font-size: 1.6em;
+    font-size: 1em;
+    padding-bottom: 1em;
+    border-bottom: 3px solid #ddd;
 }
 
 .unesco_list{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 2em;
-    border-left: 3px solid #ddd;
 }
 
 .unesco_item{
-    font-size: 1.05em;
+    font-size: 0.8em;
     margin: 0.3em 0;    
     font-weight: bold;
 }
 
-.unesco_wrap:hover .unesco_title{color: #32547B;}
-.unesco_wrap:hover .unesco_list{border-color: #32547B;}
+.unesco_wrap:hover .unesco_title{color: #32547B;border-color: #32547B;}
+.unesco_wrap:hover .unesco_title::before{background-color: #32547B;left: 100%;z-index: 10;}
 .unesco_wrap:hover .unesco_item{color: #ffb307;}
 
 /* 배너 */
@@ -831,7 +851,6 @@ footer > *{
     min-width: 400px;
 }
 
-#footer_nav{border-bottom: 1px solid #ddd;}
 #footer_nav > li{margin: 0 1em;width: 200px;}
 #footer_nav > li > a{
     color: #fff !important;
